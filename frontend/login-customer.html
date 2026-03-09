@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đăng nhập Khách hàng - FBShop</title>
+  <link rel="stylesheet" href="./css/login.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-illustration">
+      <div class="auth-illustration-overlay"></div>
+      <div class="auth-illustration-content">
+        <h2>Thể thao mỗi ngày</h2>
+        <p>Cùng FBShop chọn cho bạn những dụng cụ cầu lông tốt nhất.</p>
+      </div>
+    </div>
+
+    <div class="auth-form-wrapper">
+      <div class="auth-form">
+        <h1 class="auth-title">Đăng nhập Khách hàng</h1>
+
+        <form>
+          <div class="form-group">
+            <label for="customer-email">Email</label>
+            <input id="customer-email" type="email" placeholder="Email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="customer-password">Mật khẩu</label>
+            <div class="password-input">
+              <input id="customer-password" type="password" placeholder="Mật khẩu" required />
+              <button type="button" class="toggle-password" aria-label="Hiện / ẩn mật khẩu">
+                👁
+              </button>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <a class="link" href="./forgot-password.html">Quên mật khẩu?</a>
+          </div>
+
+          <button type="submit" class="btn-primary">Đăng nhập</button>
+        </form>
+
+        <div class="auth-switch">
+          <span>Bạn mới biết đến FBShop?</span>
+          <a class="link" href="./register.html">Đăng ký</a>
+        </div>
+
+        <div class="auth-switch auth-switch--center">
+          <span>Đăng nhập với vai trò khác?</span>
+          <a class="link" href="./login-admin.html">Admin</a>
+          <span> | </span>
+          <a class="link" href="./login-seller.html">Người bán</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggleButtons = document.querySelectorAll('.toggle-password');
+    toggleButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const input = btn.previousElementSibling;
+        if (!input) return;
+        const isPassword = input.type === 'password';
+        input.type = isPassword ? 'text' : 'password';
+      });
+    });
+  </script>
+</body>
+</html>
+
+
